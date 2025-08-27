@@ -1,0 +1,33 @@
+<!--
+Предыдущая (более красочная) версия кода:
+-->
+
+{% extends "base.html" %}
+
+
+{% block title %}
+  Лента записей
+{% endblock %}
+
+{% block content %}
+  <h1 class="frame_width">Лента записей</h1>                        
+  <!-- Перебираем в цикле все посты -->
+  {% for post in posts %}
+    <hr>
+    <article class="additional_design frame_width gradient_posts">
+      {% include "blog/posts_include.html" %}
+      <a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
+    </article>  
+  {% endfor %}
+
+{% endblock %}
+
+
+
+
+
+<!--
+
+Новая, более скудная верся кода (оставил старую версию кода):
+
+-->

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+  {{ post.location }}. {{post.date}}
+{% endblock %}
+
+{% block content %}
+  <article class="additional_design frame_width gradient_posts">
+    {% include "blog/posts_include.html" %}   
+  </article>                
+{% endblock %}
+
+
+
+
+
+<!--
+
+Новая версия кода - отличается от старой версии (провести разбор кода и его доработку)
+...
+
+-->

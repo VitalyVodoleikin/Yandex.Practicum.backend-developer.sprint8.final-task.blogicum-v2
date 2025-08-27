@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+  Публикации в категории {{ selected_category }}
+{% endblock%}
+
+{% block content %}
+  <h1 class="frame_width">Публикации в категории {{ selected_category }}</h1>   
+  <hr>
+  
+  {% for note in post %}
+    <h3 class="frame_width">Пост {{ note.id }}<br>
+    {{ note.location }}, {{ note.date }}</h3>
+    <p class="additional_design frame_width gradient_posts">
+    {{ note.text|linebreaksbr }}
+    </p>
+    <br>
+    <br>
+  {% endfor %}
+
+  <hr>
+  <br>
+{% endblock %}
+
+
+
+
+<!--
+
+Новая версия кода - отличается от старой версии (провести разбор кода и его доработку)
+...
+
+-->
