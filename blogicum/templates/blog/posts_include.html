@@ -2,13 +2,18 @@
 
 <ul>
   <li>
-    Место: {{ post.locatoin }}              
+    Место: {{ post.locatoin|default:"Не указано" }}              
   </li>
   <li>
-    Дата: {{ post.date }}.
+    Дата: {{ post.date|date:"d.m.Y" }}.
   </li>
   <li>
-    Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
+    Категория: 
+    {% if post.selected_category %}
+    <a href="{% url 'blog:category_posts' post.selected_category %}">{{ post.selected_ategory }}</a>
+    {% else %}
+      Без категории
+    {% endif %}
   </li>
 </ul>
 <p>
