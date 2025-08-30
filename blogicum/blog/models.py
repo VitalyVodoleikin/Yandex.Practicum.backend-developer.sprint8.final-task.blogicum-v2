@@ -64,6 +64,9 @@ class Post(models.Model):
         verbose_name = 'публикация'
         verbose_name_plural = 'Публикации'
 
+        def __str__(self):
+            return self.title
+
 
 class Category(models.Model):
     # Тематическая категория
@@ -102,6 +105,9 @@ class Category(models.Model):
         verbose_name = 'категория'
         verbose_name_plural = 'Категории'
 
+        def __str__(self):
+            return self.title
+
 
 class Location(models.Model):
     # Географическая метка
@@ -113,7 +119,8 @@ class Location(models.Model):
     is_published = models.BooleanField(
         default=True, 
         blank=False, 
-        null=False, verbose_name='Опубликовано', help_text='Снимите галочку, чтобы скрыть публикацию.'
+        null=False, verbose_name='Опубликовано', 
+        help_text='Снимите галочку, чтобы скрыть публикацию.'
     )
     created_at = models.DateTimeField(
         auto_now_add=True, 
@@ -124,6 +131,25 @@ class Location(models.Model):
     class Meta:
         verbose_name = 'местоположение'
         verbose_name_plural = 'Местоположения'
+
+        def __str__(self):
+            return self.title
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
