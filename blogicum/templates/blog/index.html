@@ -1,7 +1,3 @@
-<!--
-Предыдущая (более красочная) версия кода:
--->
-
 {% extends "base.html" %}
 
 
@@ -16,7 +12,7 @@
     <hr>
     <article class="additional_design frame_width gradient_posts">
       {% include "blog/posts_include.html" %}
-      <a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
+      <!-- # -->
     </article>  
   {% endfor %}
 
@@ -26,8 +22,10 @@
 
 
 
-<!--
+{% comment %}
 
-Новая, более скудная верся кода (оставил старую версию кода):
+<!-- Старая версия кода -->
 
--->
+<a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
+
+{% endcomment %}
