@@ -1,48 +1,16 @@
 {% extends "base.html" %}
+
 {% block title %}
   Публикации в категории «{{ category.title }}»
 {% endblock %}
-{% block content %}
-<h1 class="frame_width">Публикации в категории «{{ category.title }}»</h1>
-<p class="mb-5">{{ category.description }}</p>
-{% for post in post_list %}
-  <article class="mb-5">  
-    {% include "includes/post_card.html" %}
-  </article>   
-{% endfor %}
-
-{% endblock %}
-
-
-
-
-
-{% comment %}
-
-<!-- Старая версия кода -->
-
-{% extends "base.html" %}
-
-{% block title %}
-  Публикации в категории {{ selected_category }}
-{% endblock%}
 
 {% block content %}
-  <h1 class="frame_width">Публикации в категории {{ selected_category }}</h1>   
-  <hr>
-  
-  {% for note in post %}
-    <h3 class="frame_width">Пост {{ note.id }}<br>
-    {{ note.location }}, {{ note.date }}</h3>
-    <p class="additional_design frame_width gradient_posts">
-    {{ note.text|linebreaksbr }}
-    </p>
-    <br>
-    <br>
+  <h1 class="frame_width">Публикации в категории «{{ category.title }}»</h1>
+  <p class="mb-5">{{ category.description }}</p>
+  {% for post in posts %}
+    <article class="mb-5 additional_design frame_width gradient_posts">  
+      {% include "includes/post_card.html" %}
+    </article>   
   {% endfor %}
 
-  <hr>
-  <br>
 {% endblock %}
-
-{% endcomment %}

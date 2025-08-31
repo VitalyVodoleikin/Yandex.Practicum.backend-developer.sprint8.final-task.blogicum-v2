@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block title %}
   Лента записей
@@ -11,21 +11,8 @@
   {% for post in posts %}
     <hr>
     <article class="additional_design frame_width gradient_posts">
-      {% include "blog/posts_include.html" %}
-      <!-- # -->
+      {% include "includes/post_card.html" %}
     </article>  
   {% endfor %}
 
 {% endblock %}
-
-
-
-
-
-{% comment %}
-
-<!-- Старая версия кода -->
-
-<a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
-
-{% endcomment %}

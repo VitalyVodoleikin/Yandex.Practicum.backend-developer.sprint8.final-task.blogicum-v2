@@ -14,14 +14,14 @@ class PostAdmin(admin.ModelAdmin):
         'is_published',
         'created_at',
         'author',
-        'category',
-        'location',
+        'category__title',
+        'location__name',
     )
     list_editable = (
         'is_published',
     )
     search_fields = ('title',) 
-    list_filter = ('category',)
+    list_filter = ('category__title',)
     list_display_links = ('title',)
 
 
@@ -47,11 +47,11 @@ class LocationAdmin(admin.ModelAdmin):
         'is_published',
         'created_at',
     )
-    # list_editable = (
-    #     'name',
-    # )
+    list_editable = (
+        'is_published',
+    )
     search_fields = ('name',) 
-    list_filter = ('name',)
+    list_filter = ('created_at',)
     list_display_links = ('name',)
 
 

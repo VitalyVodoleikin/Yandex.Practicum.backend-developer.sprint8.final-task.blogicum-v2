@@ -24,7 +24,8 @@ class Post(models.Model):
         blank=False, 
         null=False, 
         verbose_name='Дата и время публикации', 
-        help_text='Если установить дату и время в будущем — можно делать отложенные публикации.'
+        help_text='''Если установить дату и время в будущем — можно 
+        делать отложенные публикации.'''
     )
     author = models.ForeignKey(
         User, 
@@ -65,7 +66,7 @@ class Post(models.Model):
         verbose_name_plural = 'Публикации'
 
         def __str__(self):
-            return self.title
+            return f"{self.title}"
 
 
 class Category(models.Model):
@@ -86,7 +87,8 @@ class Category(models.Model):
         unique=True, 
         null=False, 
         verbose_name='Идентификатор', 
-        help_text='Идентификатор страницы для URL; разрешены символы латиницы, цифры, дефис и подчёркивание.'
+        help_text='''Идентификатор страницы для URL; разрешены символы 
+        латиницы, цифры, дефис и подчёркивание.'''
     )
     is_published = models.BooleanField(
         default=True, 
@@ -106,7 +108,7 @@ class Category(models.Model):
         verbose_name_plural = 'Категории'
 
         def __str__(self):
-            return self.title
+            return f"{self.title}"
 
 
 class Location(models.Model):
@@ -133,66 +135,4 @@ class Location(models.Model):
         verbose_name_plural = 'Местоположения'
 
         def __str__(self):
-            return self.title
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ----------
-# Позже удалить это
-# Пример кода из задания с Анфисой
-# class IceCream(PublishedModel):
-#     title = models.CharField(max_length=256, verbose_name='Название')
-#     description = models.TextField(verbose_name='Описание')
-#     wrapper = models.OneToOneField(
-#         Wrapper,
-#         on_delete=models.SET_NULL,
-#         related_name='ice_cream',
-#         null=True,
-#         blank=True,
-#         verbose_name='Обертка'
-#     )
-#     category = models.ForeignKey(
-#         Category,
-#         on_delete=models.CASCADE,
-#         related_name='ice_creams',
-#         verbose_name='Категория',
-#     )
-#     toppings = models.ManyToManyField(Topping)
-#     is_on_main = models.BooleanField(default=False, verbose_name='На главную')
-#     output_order = models.PositiveSmallIntegerField(
-#         default=100,
-#         verbose_name='Порядок отображения'
-#     )
-#     price = models.DecimalField(max_digits=5, decimal_places=2)
-
-#     class Meta:
-#         verbose_name = 'Мороженое'
-#         verbose_name_plural = 'Мороженое'
-#         # Сначала сортируем по полю output_order, 
-#         # а если у нескольких объектов значения output_order совпадают-- 
-#         # сортируем по title.
-#         ordering = ('output_order', 'title')
-
-#     def __str__(self):
-#         return self.title
+            return f"{self.name}"
