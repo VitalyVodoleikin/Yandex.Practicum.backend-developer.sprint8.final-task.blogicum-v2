@@ -24,7 +24,10 @@ class Post(models.Model):
         blank=False,
         null=False,
         verbose_name='Дата и время публикации',
-        help_text='Если установить дату и время в будущем — можно делать отложенные публикации.'
+        help_text=(
+            'Если установить дату и время в '
+            'будущем — можно делать отложенные публикации.'
+        )
     )
     author = models.ForeignKey(
         User,
@@ -86,7 +89,10 @@ class Category(models.Model):
         unique=True,
         null=False,
         verbose_name='Идентификатор',
-        help_text='Идентификатор страницы для URL; разрешены символы латиницы, цифры, дефис и подчёркивание.'
+        help_text=(
+            'Идентификатор страницы для URL; разрешены символы латиницы, '
+            'цифры, дефис и подчёркивание.'
+        )
     )
     is_published = models.BooleanField(
         default=True,
