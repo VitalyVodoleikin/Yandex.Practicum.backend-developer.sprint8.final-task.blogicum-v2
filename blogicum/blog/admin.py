@@ -8,6 +8,7 @@ from .models import Location
 
 class PostAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'title',
         'text',
         'pub_date',
@@ -19,14 +20,16 @@ class PostAdmin(admin.ModelAdmin):
     )
     list_editable = (
         'is_published',
+        'author',
     )
-    search_fields = ('title',) 
+    search_fields = ('title', 'text') 
     list_filter = ('category__title',)
     list_display_links = ('title',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'title',
         'description',
         'slug',
@@ -43,6 +46,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class LocationAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'name',
         'is_published',
         'created_at',
