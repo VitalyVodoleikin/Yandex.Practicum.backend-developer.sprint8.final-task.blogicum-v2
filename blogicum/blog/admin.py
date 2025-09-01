@@ -22,7 +22,7 @@ class PostAdmin(admin.ModelAdmin):
         'is_published',
         'author',
     )
-    search_fields = ('title', 'text') 
+    search_fields = ('title', 'text')
     list_filter = ('category__title',)
     list_display_links = ('title',)
 
@@ -39,7 +39,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_editable = (
         'is_published',
     )
-    search_fields = ('title',) 
+    search_fields = ('title',)
     list_filter = ('title',)
     list_display_links = ('title',)
 
@@ -54,7 +54,7 @@ class LocationAdmin(admin.ModelAdmin):
     list_editable = (
         'is_published',
     )
-    search_fields = ('name',) 
+    search_fields = ('name',)
     list_filter = ('created_at',)
     list_display_links = ('name',)
 
