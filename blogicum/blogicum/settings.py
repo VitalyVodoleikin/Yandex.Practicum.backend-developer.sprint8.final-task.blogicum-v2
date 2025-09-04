@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -129,3 +129,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Количество постов на главной странице
+POSTS_RELEASE_LIMIT = 5
+
+# Максимальное количество символово в полях title и name
+MAX_LENGTH_TITLE_FIELDS = 256
+
+# Ограничение длины тайтла страницы
+MAX_LENGTH_SELF_TITLE = 100

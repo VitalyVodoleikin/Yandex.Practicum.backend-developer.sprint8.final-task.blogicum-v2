@@ -2,10 +2,15 @@ from django.contrib import admin
 from .models import Post
 from .models import Category
 from .models import Location
+from django.contrib.auth.models import Group
 
 # Register your models here.
 
 
+admin.site.unregister(Group)
+
+
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = (
         'id',
@@ -27,6 +32,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
 
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'id',
@@ -44,6 +50,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
 
 
+@admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = (
         'id',
@@ -57,8 +64,3 @@ class LocationAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_filter = ('created_at',)
     list_display_links = ('name',)
-
-
-admin.site.register(Post, PostAdmin)
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Location, LocationAdmin)
